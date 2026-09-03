@@ -1,5 +1,22 @@
 --MASTER SCRIPT TO LOAD SILVER LAYER
 --METHOD TRUNCATE & INSERT
+/*
+==============================================================
+Stored Procedure: Load Silver Layer (Bronze --> Silver)
+==============================================================
+Script Purpose:
+	This stored procedure performs the ETL(Extract, Transform, Load) Process
+	to populate the 'Silver' Schema Tables from the 'Bronze' Schema.
+Actions Performed:
+	Truncate Silver Schema Tables.
+	Insert transformed and cleansed data from Bronze into Silver tables.
+Parameters:
+	None.
+	This stored procedure does not accept any parameters or return any values.
+
+Usage Example:
+	EXEC silver.load_silver
+*/
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN
 	DECLARE @start_time DATETIME, @end_time DATETIME;
